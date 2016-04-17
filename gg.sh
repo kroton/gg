@@ -20,6 +20,7 @@ SubCommands:
     gg build
     gg run
     gg test [<target>]
+    gg gen <num-of-tests>
 EOF
 }
 
@@ -45,6 +46,14 @@ function run_test {
 	fi
 }
 
+function gen {
+	touch main.cpp
+	for i in `seq 1 ${1}`
+	do
+		touch "${i}.in"
+	done
+}
+
 
 case "${1}" in
 	"build")
@@ -57,6 +66,10 @@ case "${1}" in
 
 	"test")
 		build && run_test "${2}"
+	;;
+
+	"gen")
+		gen "${2}"
 	;;
 
 	"help"|"--help"|"-h")
