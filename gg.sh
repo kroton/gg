@@ -66,7 +66,7 @@ case "${1}" in
 	;;
 
 	"test")
-		build && run_test "${2}"
+		build && cecho $green "build succeeded" && run_test "${2}"
 	;;
 
 	"gen")
