@@ -52,6 +52,7 @@ function gen {
 	do
 		touch "${i}.in"
 	done
+	cecho $green "generated template"
 }
 
 
