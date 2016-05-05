@@ -73,6 +73,10 @@ case "${1}" in
 		gen "${2}"
 	;;
 
+	"copy")
+		cat main.cpp | pbcopy && cecho $green "copy main.cpp to clipboard"
+	;;
+
 	"help"|"--help"|"-h")
 		usage
 	;;
