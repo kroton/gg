@@ -21,6 +21,7 @@ SubCommands:
     gg run
     gg test [<target>]
     gg gen <num-of-tests>
+    gg copy
 EOF
 }
 
