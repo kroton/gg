@@ -47,7 +47,12 @@ function run_test {
 }
 
 function gen {
-	touch main.cpp
+	local template_path=~/.config/gg/template.cpp
+	if [ -f $template_path ] && [ ! -f main.cpp ]; then
+		cp $template_path main.cpp
+	else
+		touch main.cpp
+	fi
 	for i in `seq 1 ${1}`
 	do
 		touch "${i}.in"
